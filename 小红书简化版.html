@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="小红书.png">
+<title>小红书简化版</title>
+<style> a {text-decoration: none; font-family: "Microsoft YaHei", sans-serif; font-weight: 600; color: black;}
+#searchInput {width: 156px;} </style>
+</head>
+<body>
+<input type="text" id="searchInput" placeholder="输入关键词 按Enter键搜索">
+<script>
+    const searchInput = document.getElementById('searchInput');
+    searchInput.addEventListener('keypress', function (event) {
+        if (event.key === 'Enter') {
+            event.preventDefault();
+            const searchTerm = searchInput.value;
+            if (searchTerm.trim() !== '') {
+                const encodedSearchTerm = encodeURIComponent(searchTerm);
+                const searchUrl = `https://www.xiaohongshu.com/search_result?keyword=${encodedSearchTerm}`;
+                window.open(searchUrl, '_blank');
+                searchInput.value = '';
+            }
+        }
+    });
+</script>
+<p><a href="https://www.xiaohongshu.com/user/profile/613db1e50000000002025cf2" target="_blank">AI最前沿</a></p>
+<p><a href="https://www.xiaohongshu.com/user/profile/5cceadf4000000001702909e" target="_blank">㒰球机器人ROBOT</a></p>
+<p><a href="https://www.xiaohongshu.com/user/profile/6421b122000000001102397c" target="_blank">今日富人圈信息差</a></p>
+<p><a href="https://www.xiaohongshu.com/user/profile/641895b0000000001201160a" target="_blank">今日AI</a></p>
+<p><a href="https://www.xiaohongshu.com/user/profile/63ba82bb0000000027028cab" target="_blank">李学长</a></p>
+<p><a href="https://www.xiaohongshu.com/user/profile/642521a0000000001102304b" target="_blank">Jason</a></p>
+<p><a href="https://www.xiaohongshu.com/user/profile/5d282ecd0000000012016d6b" target="_blank">Arnett</a></p>
+<p><a href="https://www.xiaohongshu.com/user/profile/6344d66a0000000018029749" target="_blank">码上就好</a></p>
+<p><a href="https://www.xiaohongshu.com/user/profile/63e4d5b2000000002702bd13" target="_blank">热门AI论文</a></p>
+<p><a href="https://www.xiaohongshu.com/user/profile/5e87f723000000000100bd46" target="_blank">欲雨了</a></p>
+<!所有链接在每次点击后都会变成紫色>
+<script>
+const links = document.querySelectorAll('a');
+links.forEach(link => {
+  link.addEventListener('click', () => {
+    link.style.color = 'purple';
+  }); 
+});
+</script>
+</body>
+</html>
